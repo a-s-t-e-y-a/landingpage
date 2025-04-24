@@ -9,15 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.2.4",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "astro": "^5.7.4",
+    "g": "^2.0.1",
     "install": "^0.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "serve": "^14.2.4",
     "tailwindcss": "^4.1.4"
   }
 }
