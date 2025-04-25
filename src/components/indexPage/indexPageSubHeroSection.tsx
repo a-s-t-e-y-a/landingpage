@@ -2,7 +2,7 @@ import HeroSection from "../HeroSection";
 
 export default function IndexPageSubHeroSection() {
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
 
             <HeroSection
                 features={[
@@ -55,6 +55,44 @@ export default function IndexPageSubHeroSection() {
                     "Track expenses other than inventory purchase",
                     "Email vendor statement in one click"
                 ]}
+            />
+
+            <HeroSection
+                imagePosition="left"
+                title="Your Success is Our Success!"
+                subtitle="We understand that we can succeed only when each of our customers is happy and successful."
+                description="Once you signup, you'll get access to:"
+                image="./banner_image_3.webp"
+                sectionClassName="bg-[#f8f9fc]"
+                textContainerClassName="text-black"
+                features={[
+                    "In-app chat support available in 3 languages, 5 days a week",
+                    "A complete Support Center with lots of How-To guides",
+                    "A YouTube channel with demos and small tutorials",
+                    "A business blog filled with articles that help you grow your business",
+                    "You can now manage your finances from wherever you are through the Trigon app for iOS and Android"
+                ]}
+                learnMoreText=""
+                learnMoreLink="#"
+            />
+
+            <HeroSection
+                imagePosition="left"
+                title="Remote Bookkeeping Service"
+                subtitle="Don't have time for accounting? Let us handle it for you!"
+                description="Our team of expert accountants will help you with accounting & tax filing. All you have to do is to send your bank statement, invoices & expense bills to us and your dedicated bookkeeper will do the rest."
+                image="./banner_image_5.png"
+                sectionClassName="bg-[#f5f4ff]"
+                textContainerClassName="text-black"
+                features={[
+                    "Call with expert accountants to address queries",
+                    "Always on-time tax filing",
+                    "Monthly reporting of financial performance",
+                    "Up to date bookkeeping of all transactions"
+                ]}
+                learnMoreText="Learn More"
+                learnMoreLink="#"
+                learnMoreClassName="inline-flex items-center justify-center font-medium text-blue-600 hover:text-blue-800"
             />
         </div>
     );
