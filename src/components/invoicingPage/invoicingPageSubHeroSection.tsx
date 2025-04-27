@@ -9,6 +9,9 @@ export default function InvoicingPageSubHeroSection() {
                 <HeroSection
                     key={index}
                     title={section.title}
+                    titleClassName={section.titleClassName}
+                    subtitleClassName={section.subtitleClassName}
+                    headingLayout={section.headingLayout}
                     subtitle={section.subtitle}
                     description={section.description}
                     image={section.image}

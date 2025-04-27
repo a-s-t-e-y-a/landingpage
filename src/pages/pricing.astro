@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+interface Feature {
+    text: string;
+    highlight?: string;
+}
+
+interface PricingPlan {
+    title: string;
+    price: string;
+    period: string;
+    features: Feature[];
+    buttonText: string;
+    variant: 'default' | 'primary';
+}
+
+const pricingPlans: PricingPlan[] = [
+    {
+        title: "Start Up",
+        price: "$0.00",
+        period: "/month",
+        variant: 'default',
+        buttonText: "Sign Up For Free",
+        features: [
+            { text: "Create professional invoices in multi-currency" },
+            { text: "Track receivables" },
+            { text: "Manage business expenses" },
+            { text: "Get tax reports" },
+            { text: "Supports Single User" },
+            { text: "Create Up to 25 Invoices Per Month" },
+            { text: "Manage Up to 100 Customers" },
+            { text: "Track Up to 25 Products or Services" },
+            { text: "Create Products" },
+            { text: "Create Customers" },
+            { text: "Manage Suppliers" },
+            { text: "Create Sales Orders" },
+            { text: "Accept Online Payments" },
+            { text: "Deal In Multiple Currencies" },
+            { text: "Manage Inventory" },
+            { text: "Track Payables & Receivables" },
+        ]
+    },
+    {
+        title: "SMB",
+        price: "$20 or Rs 749",
+        period: "/month",
+        variant: 'primary',
+        buttonText: "Start Free Upgrade Later",
+        features: [
+            { text: "Get all features plus support for multiple users" },
+            { text: "Individual access level", highlight: "Great For Growing Businesses!" },
+            { text: "Supports Unlimited Users" },
+            { text: "Create Unlimited Invoices" },
+            { text: "Manage Unlimited Customers" },
+            { text: "Track Unlimited Products or Services" },
+            { text: "Create Products" },
+            { text: "Create Customers" },
+            { text: "Manage Suppliers" },
+            { text: "Create Sales Orders" },
+            { text: "Accept Online Payments" },
+            { text: "Deal In Multiple Currencies" },
+            { text: "Manage Inventory" },
+            { text: "Track Payables & Receivables" },
+            { text: "Manage Taxes" },
+            { text: "Get 40+ Financial Reports" }
+        ]
+    }
+];
+---
+
+<Layout title="Pricing" showAccountingFeature={false}>
+    <div class="max-w-6xl mx-auto px-4 py-16 bg-[#F8F9FF]">
+        <h1 class="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-[#1a1a1a] to-[#404040] bg-clip-text text-transparent">
+            Simple Software. Simple Pricing.
+        </h1>
+        <p class="text-center text-[#1D4ED8] text-lg mb-6">
+            Trigon is trusted by 100,000+ businesses all over the world. Take<br/>
+            charge of your finances today! There is nothing to download.
+        </p>
+        <p class="text-center text-[#6C5CE7] text-3xl font-semibold mb-16">
+            Start with FREE, you can choose to upgrade later.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 px-8 max-w-7xl mx-auto">
+            {pricingPlans.map((plan) => (
+                <div class={`bg-white rounded-[32px] p-8 ${plan.variant === 'primary' ? 'bg-[#EEF2FF]' : 'bg-[#F8F9FF]'}`}>
+                    <div class={`inline-block px-8 py-3 rounded-[32px] text-lg font-medium ${
+                        plan.variant === 'primary' 
+                            ? 'bg-[#1D4ED8] text-white' 
+                            : 'bg-[#F3F4F6]'
+                    }`}>
+                        {plan.title}
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="flex items-baseline">
+                            <span class="text-[40px] font-bold text-gray-900">{plan.price}</span>
+                            <span class="ml-2 text-base text-gray-500">{plan.period}</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 space-y-4">
+                        {plan.features.map((feature, index) => (
+                            <div class="flex gap-x-4 text-[15px] leading-relaxed text-gray-600">
+                                <span class="text-gray-400 shrink-0">{index + 1}.</span>
+                                <span class="text-left">
+                                    {feature.text}
+                                    {feature.highlight && (
+                                        <span class="text-[#1D4ED8] ml-1">({feature.highlight})</span>
+                                    )}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div class="mt-8">
+                        <button class={`w-full py-4 px-6 rounded-2xl text-base font-medium transition-colors ${
+                            plan.variant === 'primary'
+                                ? 'bg-[#1D4ED8] text-white hover:bg-blue-700'
+                                : 'bg-white border-2 border-gray-200 text-gray-700 hover:bg-gray-50'
+                        }`}>
+                            {plan.buttonText}
+                        </button>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .bg-gradient-to-r {
+        background-image: linear-gradient(90deg, #1a1a1a 0%, #404040 100%);
+    }
+</style>

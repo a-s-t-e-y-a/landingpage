@@ -3,6 +3,21 @@ import FAQ from "../components/FAQSection";
 import AccountingFeature from "../components/AccountingFeature";
 import Navbar from "../components/navbar";
 import FullFooterPage from "../components/subComponents/fullFooterPage";
+import "../styles/global.css";
+
+interface Props {
+	title: string;
+	showNavbar?: boolean;
+	showAccountingFeature?: boolean;
+	showFooter?: boolean;
+}
+
+const {
+	title,
+	showNavbar = true,
+	showAccountingFeature = true,
+	showFooter = true
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -15,10 +30,10 @@ import FullFooterPage from "../components/subComponents/fullFooterPage";
 		<title>Astro Basics</title>
 	</head>
 	<body>	
-		<Navbar />
-		<AccountingFeature />
+		{showNavbar && <Navbar />}
+		{showAccountingFeature && <AccountingFeature />}
 		<slot />
-		<FullFooterPage client:load/>
+		{showFooter && <FullFooterPage client:load/>}
 	</body>
 </html>
 

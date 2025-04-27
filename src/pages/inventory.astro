@@ -1,0 +1,152 @@
+---
+
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import InvoicingPageSubHeroSection from "../components/invoicingPage/invoicingPageSubHeroSection";
+import HeroSection from "../components/HeroSection";
+import InventoryDashboard from "../components/InventoryDashboard";
+import TestimonialsStrip from "../components/TestimonialsStrip";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="BookEasy">
+    <InvoicingPageSubHeroSection />
+    
+    <!-- GST Compliant Inventory Management System Section -->
+    <section class="bg-[#6246FF] py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-2">GST Compliant Inventory Management System</h2>
+                <p class="text-xl text-white">Stay tax-ready when you manage day-to-day transactions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-start">
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 7H22" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 12H18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 16H14" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Automate GST Calculation</h3>
+                    <p class="text-white">When you create a invoices or purchases, CGST, IGST, or SGST rates are automatically calculated, saving you time and eliminating manual calculations.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-start">
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 3V7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 3V7" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 11H22" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">E-Way Bills</h3>
+                    <p class="text-white">You can generate an e-Way bill with all the transport company details while creating an invoice, credit note or delivery challan.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-start">
+                    <div class="mb-4">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 7H22" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 12H10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M14 12H18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 16H18" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">HSN/SAC Codes</h3>
+                    <p class="text-white">Add your HSN or SAC code for the products you sell or services you provide to ensure GST compliance. You can also save GSTN of your customers & vendors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Insightful Reports Section using HeroSection component -->
+    <HeroSection
+        title="Insightful Reports On Inventory Workflow"
+        subtitle="Turn your transaction data into insights"
+        description=""
+        image="/banner_image_1.png"
+        imagePosition="right"
+        headingLayout="centered"
+        features={[
+            "Real-time Information At A Glance: ProfitBooks gives you instant access to important reports like inventory valuation, low stock alerts, pending orders, stock wastage and product-wise transaction report.",
+            "45+ Filterable Reports: All reports in ProfitBooks are fully filterable, allowing you to drill down easily and see the hidden details. No more pulling together information from various excel documents, paper trails, and email communications."
+        ]}
+        sectionClassName="bg-white py-12"
+        titleClassName="text-black"
+        subtitleClassName="text-blue-800"
+        textContainerClassName="text-black"
+    />
+    
+    <InventoryDashboard />
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Simplify Purchase Workflow</h3>
+                    <p class="text-gray-600">Create Purchase Orders and email them to your vendors with one click. You can allocate the inventory to desired warehouses at the time of recording purchase.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Stock Control & Adjustments</h3>
+                    <p class="text-gray-600">Record stock transfer between warehouses, stock wastage, raw material consumption and production of finished goods – All from a super simple interface.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Create Sales Orders</h3>
+                    <p class="text-gray-600">ProfitBooks lets you create sales orders and easily convert them into delivery challans and invoices, streamlining your sales process.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Create Multiple Users</h3>
+                    <p class="text-gray-600">You can add multiple users and even assign them specific roles. For example, an employee with 'inventory manager' role can only access the inventory function.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Maintain Multiple Warehouses</h3>
+                    <p class="text-gray-600">Create multiple warehouses to store inventory. You can even call them Store, Location or Godown as per your business needs.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Support Multiple Currencies</h3>
+                    <p class="text-gray-600">ProfitBooks Trade supports all the major currencies. You even get a report that shows gain or loss due to currency fluctuation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <HeroSection
+                imagePosition="left"
+                title="Your Success is Our Success!"
+                subtitle="We understand that we can succeed only when each of our customers is happy and successful."
+                description="Once you signup, you'll get access to:"
+                image="./banner_image_3.webp"
+                sectionClassName="bg-[#f8f9fc]"
+                textContainerClassName="text-black"
+                features={[
+                    "In-app chat support available in 3 languages, 5 days a week",
+                    "A complete Support Center with lots of How-To guides",
+                    "A YouTube channel with demos and small tutorials",
+                    "A business blog filled with articles that help you grow your business",
+                    "You can now manage your finances from wherever you are through the Trigon app for iOS and Android"
+                ]}
+                learnMoreText=""
+                learnMoreLink="#"
+    />
+    <TestimonialsStrip />
+
+            
+</Layout>

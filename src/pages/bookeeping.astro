@@ -1,0 +1,124 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import HeroSection from "../components/HeroSection";
+import TestimonialsStrip from "../components/TestimonialsStrip";
+
+const bookkeepingFeatures = [
+    "Personal onboarding and business setup",
+    "A dedicated Bookkeeper for recording transactions",
+    "Monthly categorization of your income & expenses",
+    "Reconciliation of your bank statement",
+    "Business reports to see how you're doing month to month",
+    "Free access to premium accounting software",
+];
+
+const testimonials = [
+    {
+        image: "./testimonial-us-01-1.png",
+        name: "Ankush P.",
+        position: "Systems Engineer",
+        company: "CEO, HIA, Inc",
+        testimonial:
+            "Very Satisfied! Very convenient to make customer invoices and apply taxes as needed. Invoices are the Key. Easy Creation, modification, and Generation.",
+    },
+    {
+        image: "./testimonial-us-02-1.png",
+        name: "Balaji I.",
+        position: "Founder & CEO",
+        company: "CEO, HIA, Inc",
+        testimonial:
+            "Trigon saves lots of time and dollars for me. My experience with Trigon is as excellent as walking on a piece of cake.",
+    },
+];
+---
+
+<Layout 
+    title="BookEasy - Remote Bookkeeping"
+>
+    <!-- How Remote Bookkeeping Works Section -->
+
+    <!-- Benefits Section using HeroSection component -->
+    <HeroSection
+        title="How You Can Benefit From Remote Bookkeeping"
+        subtitle="Trigon experts will take care of accounting while you focus on growing your business"
+        description="Let our experienced team handle your bookkeeping needs while you concentrate on what matters most - running and growing your business."
+        image="/banner_image_5.png"
+        imagePosition="left"
+        features={bookkeepingFeatures}
+        sectionClassName="bg-white"
+        textContainerClassName="text-gray-800"
+        titleClassName="text-gray-900"
+        subtitleClassName="text-blue-600"
+    >
+        <div class="mt-6">
+            <a
+                href="#"
+                class="text-blue-600 font-medium hover:text-blue-700 flex items-center"
+            >
+                Learn More →
+            </a>
+        </div>
+    </HeroSection>
+    <section class="bg-[#6448F5] py-16 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-2">
+                How Remote Bookkeeping Works
+            </h2>
+            <p class="text-center text-xl mb-12">It's as easy as 1-2-3 !</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-start">
+                    <div class="text-7xl font-bold mb-4">01</div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Get Your Account Setup
+                    </h3>
+                    <p class="text-gray-100">
+                        We'll introduce you to a dedicated bookkeeper. They'll
+                        understand your business and set up your accounting in
+                        Trigon software.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <div class="text-7xl font-bold mb-4">02</div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Send Your Transactions
+                    </h3>
+                    <p class="text-gray-100">
+                        You can securely send your transactions using either
+                        Trigon application or a personal email to us.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-start">
+                    <div class="text-7xl font-bold mb-4">03</div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Get Monthly Reports Delivered
+                    </h3>
+                    <p class="text-gray-100">
+                        Your books are reconciled & you receive a detailed
+                        monthly report containing your profit and loss, balance
+                        sheet, and cash flow statement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <HeroSection
+        title="How You Can Benefit From Remote Bookkeeping"
+        subtitle="Trigon experts will take care of accounting while you focus on growing your business"
+        description=""
+        image="/banner_image_5.png"
+        imagePosition="left"
+        features={bookkeepingFeatures}
+        sectionClassName="bg-white py-16"
+        textContainerClassName="text-gray-800"
+        titleClassName="text-gray-900 text-4xl"
+        subtitleClassName="text-blue-600"
+        learnMoreText="Learn More"
+        learnMoreClassName="text-blue-600 font-medium hover:text-blue-700 flex items-center"
+    />
+    <TestimonialsStrip testimonials={testimonials} />
+</Layout>

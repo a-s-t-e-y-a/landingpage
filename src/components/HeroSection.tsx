@@ -2,6 +2,7 @@ import type { HeroSectionProps } from "../interfaces/HeroSection";
 
 export default function HeroSection({
     imagePosition = 'right',
+    headingLayout = 'default',
     title = 'Grow Your Sales With Powerful Invoicing',
     subtitle = 'Get paid on time and maintain positive cash flow.',
     description = 'With Trigon accounting software, you can create professional estimates or invoices and track outstanding payments due with few clicks',
@@ -19,14 +20,18 @@ export default function HeroSection({
     textContainerClassName = "text-white",
     titleClassName = "block text-3xl font-bold sm:text-4xl lg:text-5xl lg:leading-tight",
     subtitleClassName = "mt-3 text-lg font-semibold",
-    descriptionClassName = "mt-3 text-lg"
+    descriptionClassName = "mt-3 text-lg",
+    centeredHeadingClassName = "text-white"
 }: HeroSectionProps & {
+    headingLayout?: 'default' | 'centered',
     features?: string[],
     learnMoreLink?: string,
     learnMoreText?: string,
-    learnMoreClassName?: string
+    learnMoreClassName?: string,
+    centeredHeadingClassName?: string
 }) {
     const isImageRight = imagePosition === 'right';
+    const isCenteredHeading = headingLayout === 'centered';
 
     const imageContent = (
         <div className={imageContainerClassName}>
@@ -58,19 +63,36 @@ export default function HeroSection({
         </div>
     ) : null;
 
-    const textContent = (
-        <div className={textContainerClassName}>
-            <h1 className={titleClassName}>{title}</h1>
-            <p className={subtitleClassName}>{subtitle}</p>
+    const headingContent = (
+        <>
+            <h1 className={`block text-3xl font-bold sm:text-4xl lg:text-5xl text-black lg:leading-tight ${titleClassName} ${isCenteredHeading ? "text-center" : ""}`}>{title}</h1>
+            <p className={`mt-3 text-lg font-semibold ${subtitleClassName} ${isCenteredHeading ? "text-center" : ""}`}>{subtitle}</p>
+        </>
+    );
+
+    const descriptionContent = (
+        <>
             <p className={descriptionClassName}>{description}</p>
             {featuresContent}
             {children}
+        </>
+    );
+
+    const textContent = (
+        <div className={textContainerClassName}>
+            {!isCenteredHeading && headingContent}
+            {descriptionContent}
         </div>
     );
 
     return (
         <section className={sectionClassName}>
             <div className={containerClassName}>
+                {isCenteredHeading && (
+                    <div className={`${centeredHeadingClassName} mb-12`}>
+                        {headingContent}
+                    </div>
+                )}
                 <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                     {isImageRight ? (
                         <>

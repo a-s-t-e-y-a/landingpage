@@ -1,0 +1,194 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection";
+import TestimonialsStrip from "../components/TestimonialsStrip";
+
+const features = [
+    "Estimates & Sales Orders",
+    "Automated Email Reminders",
+    "Payment Gateway Integrations",
+    "Mult-user, Multi-currency system",
+    "In-depth Sales Reports"
+];
+
+const testimonials = [
+    {
+        image: "/testimonial-us-01-1.png",
+        name: "Ankush P.",
+        position: "Systems Engineer",
+        company: "CEO, HIA, Inc",
+        testimonial: "Very Satisfied! Very convenient to make customer invoices and apply taxes as needed. Invoices are the Key. Easy Creation, modification, and Generation."
+    },
+    {
+        image: "/testimonial-us-02-1.png",
+        name: "Balaji I.",
+        position: "Founder & CEO",
+        company: "CEO, HIA, Inc",
+        testimonial: "Trigon saves lots of time and dollars for me. My experience with Trigon is as excellent as walking on a piece of cake."
+    }
+];
+
+const paymentFeatures = [
+    {
+        icon: "🔍",
+        title: "Track Your Receivables",
+        description: "Keep tabs on what your customers owe you with real-time tracking of receivables. Trigon helps you stay organized, ensuring you never miss a payment."
+    },
+    {
+        icon: "💸",
+        title: "Receive Online Payments",
+        description: "Make it easy for your clients to pay you with secure online payment options. A payment link is sent with the invoice, and the money is deposited directly into your account, speeding up your cash flow with Trigon."
+    }
+];
+
+const customizationFeatures = [
+    {
+        icon: "📋",
+        title: "Add custom fields",
+        description: "You can capture additional details like vehicle number, sales person name, etc using custom fields."
+    },
+    {
+        icon: "📑",
+        title: "Choose from pre-designed templates",
+        description: "We have carefully added various invoice templates according to the industry type. Upload your company logo, show/hide items or change columns names."
+    }
+];
+
+const automationFeatures = [
+    {
+        icon: "📅",
+        title: "Automated Invoice Reminders",
+        description: "Ensure you get paid on time with automated invoice reminders sent directly to your clients. ProfitBooks takes the hassle out of follow-ups, so you can focus on growing your business."
+    },
+    {
+        icon: "🔐",
+        title: "Customer Portal",
+        description: "Give clients access to their own portal for viewing and managing invoices. They can check billing details, payment history, and make secure payments, enhancing their experience and streamlining communication."
+    }
+];
+
+const videoFeatures = [
+    {
+        icon: "👥",
+        title: "Create Multiple Users",
+        description: "You can add multiple users and even assign them specific roles. For example, an employee with 'sales' role can only access the invoicing function."
+    },
+    {
+        icon: "📄",
+        title: "Use Multiple Invoice Templates",
+        description: "Choose from multiple professional invoice templates to match your brand. Easily switch between templates for different clients or services."
+    },
+    {
+        icon: "💱",
+        title: "Support Multiple Currencies",
+        description: "Create invoices in a currency of your customer. You even get a report that shows gain or loss due to currency fluctuation."
+    }
+];
+---
+
+<Layout title="Invoicing">
+    <HeroSection
+        title="Best Invoicing & Billing System"
+        subtitle="Trigon is the top rated invoicing software with highest satisfaction ratings"
+        description="Our powerful invoicing solution simplifies invoice creation, management, and tracking, ensuring faster payments and improved cash flow. With ProfitBooks, you can save time, reduce errors, and control your finances."
+        image="/banner_image_2.png"
+        features={features}
+        sectionClassName="bg-[#F8F9FF]"
+        textContainerClassName="text-gray-900"
+        titleClassName="bg-gradient-to-r from-[#1a1a1a] to-[#404040] bg-clip-text text-transparent"
+        subtitleClassName="text-[#1D4ED8] font-semibold"
+        descriptionClassName="text-gray-600"
+    />
+    <TestimonialsStrip testimonials={testimonials} />
+    <HeroSection
+        title="Never Miss A Single Payment!"
+        subtitle="Stay On Top of Your Invoices and Get Paid on Time!"
+        image="/banner_image_5.png"
+        features={paymentFeatures.map(f => `${f.icon} ${f.title}: ${f.description}`)}
+        sectionClassName="bg-white"
+        textContainerClassName="text-gray-900"
+        titleClassName="text-[#1E293B] font-bold"
+        subtitleClassName="text-[#1D4ED8]"
+        descriptionClassName="text-gray-600"
+    />
+
+    <HeroSection
+        title="Customize Your Invoice"
+        subtitle="Your invoice should be as unique as your business"
+        image="/banner_image_5.png"
+        features={customizationFeatures.map(f => `${f.icon} ${f.title}: ${f.description}`)}
+        sectionClassName="bg-[#E6EDF8]"
+        textContainerClassName="text-gray-900"
+        titleClassName="text-[#1E293B] text-center"
+        subtitleClassName="text-[#1D4ED8] text-center"
+        descriptionClassName="text-gray-600"
+        headingLayout="centered"
+        learnMoreClassName="text-black"
+        imagePosition="left"
+    />
+
+    <HeroSection
+        title="Invoice Automation"
+        subtitle="Put invoicing reminders & follow ups on auto-pilot"
+        image="/banner_image_2.png"
+        features={automationFeatures.map(f => `${f.icon} ${f.title}: ${f.description}`)}
+        sectionClassName="bg-white"
+        textContainerClassName="text-gray-900"
+        titleClassName="text-[#1E293B] text-center"
+        subtitleClassName="text-[#1D4ED8] text-center"
+        descriptionClassName="text-gray-600"
+        headingLayout="centered"
+        imagePosition="right"
+    />
+
+    <div class="bg-[#6448F5] text-white py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Watch How Invoicing Works in 12 minutes</h2>
+                <p class="text-xl opacity-90">Discover invoicing, reporting, customisation and various features</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                        src="/banner_image_5.png" 
+                        alt="Trigon Dashboard" 
+                        class="w-full"
+                    />
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                            <svg class="w-10 h-10 text-[#6448F5]" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white text-xl font-semibold">
+                        Watch How Trigon Can Help You With Business Accounting
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    {videoFeatures.map(feature => (
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                                <span class="text-2xl">{feature.icon}</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+                                <p class="opacity-90">{feature.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <TestimonialsStrip testimonials={testimonials} />
+</Layout>
+
+<style>
+    .bg-gradient-to-r {
+        background-image: linear-gradient(90deg, #1a1a1a 0%, #404040 100%);
+    }
+</style>
