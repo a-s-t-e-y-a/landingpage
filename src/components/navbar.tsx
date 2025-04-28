@@ -10,13 +10,16 @@ export default function Navbar() {
             </div>
             <div className="flex gap-4 text-gray-600">
                 <div className="div">
-                    Features
+                    <a href="/invoicing">Invoicing</a>
                 </div>
                 <div className="div">
-                    Pricing
+                    <a href="/pricing">Pricing</a>
                 </div>
                 <div className="div">
-                    Pricing
+                    <a href="/bookeeping">Book-keeping</a>
+                </div>
+                <div className="div">
+                    <a href="/inventory">Inventory</a>
                 </div>
             </div>
             <div className="flex gap-4">

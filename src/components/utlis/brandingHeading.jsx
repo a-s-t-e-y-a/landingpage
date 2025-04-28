@@ -1,5 +1,5 @@
 export default function BrandingHeading({content}) {
     return (
-        <h1 className="text-2xl font-bold">{content}</h1>
+        <a href="/" className="text-2xl font-bold">{content}</a>
     )
 }
