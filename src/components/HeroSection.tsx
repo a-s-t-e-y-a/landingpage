@@ -66,7 +66,7 @@ export default function HeroSection({
     const headingContent = (
         <>
             <h1 className={`block text-3xl font-bold sm:text-4xl lg:text-5xl text-black lg:leading-tight ${titleClassName} ${isCenteredHeading ? "text-center" : ""}`}>{title}</h1>
-            <p className={`mt-3 text-lg font-semibold ${subtitleClassName} ${isCenteredHeading ? "text-center" : ""}`}>{subtitle}</p>
+            <p className={`mt-3 text-lg text-[#6246FF] font-semibold ${subtitleClassName} ${isCenteredHeading ? "text-center" : ""}`}>{subtitle}</p>
         </>
     );
 
